@@ -1,0 +1,12 @@
+
+.footer1__bg__color{
+    background: #CABBE9;
+}
+.section__item2{
+    color: white;
+    font-size: larger;
+    border-radius: 5px;
+    flex-basis: 300px;
+    margin: 20px;
+    text-align: justify;
+}

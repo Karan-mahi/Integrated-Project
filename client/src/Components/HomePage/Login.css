@@ -1,0 +1,97 @@
+#cover {
+    height: 100vh;
+    width: 100vw;
+    background: url("images/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.same {
+    background-color: white;
+    height: 90%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    
+}
+#lin{
+    padding: 40px 0px;
+}
+#lin div {
+    height: 10%;
+    width: 50%;
+    background-color: blue;
+    color: white;
+    /* text-align: center; */
+    /* padding-top: 10px;   */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#lin input {
+    height: 10%;
+    width: 80%;
+    border-radius: 20px;
+    background-color: #a7a7a7;
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+#lin button {
+    height: 40px;
+    width: 150px;
+    background-color: grey;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    color: white;
+}
+#sup{
+    padding: 30px 0px;
+
+}
+#sup div {
+    height: 10%;
+    width: 50%;
+    background-color: blue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    align-items: center;
+}
+
+#sup input {
+    height: 10%;
+    width: 80%;
+    border-radius: 20px;
+    background-color: #a7a7a7;
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+#sup button {
+    height: 40px;
+    width: 150px;
+    background-color: grey;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    color: white;
+    /* border-radius: 40px; */
+}

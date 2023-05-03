@@ -1,0 +1,21 @@
+#main{
+    background-color: red;
+    width: 100vw;
+    height: 100px;
+    box-sizing: border-box;
+}
+#main div{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+#btn1{
+   visibility: hidden;
+}
+#data{
+    background-color: blue;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+}

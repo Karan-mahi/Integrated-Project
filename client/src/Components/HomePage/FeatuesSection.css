@@ -1,0 +1,31 @@
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 50px 0;
+  }
+  
+  .section__item {
+    border-radius: 5px;
+    /* background-color: #FCFFE7 ; */
+    flex-basis: 300px;
+    margin: 20px;
+    text-align: justify;
+    /* box-shadow: 2px 2px 2px #888888; */
+  }
+  
+  .section__icon {
+    font-size: 3em;
+    /* Give Height and Width for Image */
+    margin-bottom: 20px;
+  }
+  
+  .section__heading {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  
+  .section__text {
+    font-size: 1em;
+  }
+  
