@@ -18,19 +18,22 @@ exports.login = async (req, res) => {
       const isMatch = await bcrypt.compare(password, userExist.password);
       if (isMatch) {
         const token = await userExist.generateAuthToken();
-        res.cookie("jwtoken", token, {
-          expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES),
+        const cookieOptions = {
+          expires: new Date(
+            Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 60 * 1000
+          ),
           httpOnly: true,
-        });
+        };
+        res.cookie("userSave", token, cookieOptions);
         
         return res.status(200).json({ message: "login successful" });
       } else {
         
-        return res.status(200).json({ message: "Invalid credential-pass" });
+        return res.status(401).json({ message: "Invalid credential-pass" });
       }
     } else {
       
-      return res.status(200).json({ message: "Invalid credential- email" });
+      return res.status(401).json({ message: "Invalid credential- email" });
     }
   } catch (error) {
     console.log(error);
@@ -39,8 +42,11 @@ exports.login = async (req, res) => {
 };
 exports.register = async (req, res) => {
   const { name, email, password, confirmPassword } = req.body;
-  if (!name || !email || !password || !confirmPassword || password!=confirmPassword)
-    return res.status(422).send("wrong data");
+  if (!name || !email || !password || !confirmPassword || password!=confirmPassword || ! validator.validate(email)){
+    return res.status(422).json({ error: "Wrong Data!" });
+  }
+    
+
   try {
     userExist = await User.findOne({ email: email });
     if (userExist)
@@ -80,4 +86,10 @@ exports.logout = (req, res) => {
     httpOnly: true,
   });
   res.status(200).redirect("/");
+};
+
+
+exports.check = async (req, res) => {
+  console.log("heler");
+  console.log(req.cookies.jwtoken);
 };

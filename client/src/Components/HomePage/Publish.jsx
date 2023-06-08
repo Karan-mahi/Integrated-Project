@@ -2,11 +2,7 @@ import React from "react";
 import "./Publish.css";
 // import logo from "../HomePage/images/logo-black.png";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 const Publish = () => {
-
-
-  const navigate = useNavigate();
 
   const [user, setUser] = useState({
     name: "",
@@ -36,7 +32,7 @@ const Publish = () => {
     e.preventDefault();
     const { name, source, destination } = user;
     console.log(user);
-    const res = await fetch("http://localhost:5000/addRoute", {
+    const res = await fetch(`${process.env.REACT_APP_BASE_URL}/addRoute`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -65,12 +61,12 @@ const Publish = () => {
           </h1>
           <h1>vehicle for delievery of Goods</h1>
           <div className="box">
-            <div className="logosmall1">
-              <div className="textsmall1">
+            <div className="logosmall4">
+              <div className="textsmall4">
                 <label>
                   Name
                   <input
-                    placeholder="ex: Anirudh"
+                    placeholder="ex: Rahul"
                     type="text"
                     id="name"
                     name="name"
@@ -125,6 +121,7 @@ const Publish = () => {
               </div>
             </div>
 
+            <div className="leftover"></div>
             {/* <div className="logosmall4">
               <div className="textsmall4">
                 <label>
@@ -144,7 +141,7 @@ const Publish = () => {
           <div className="img1"></div>
         </div>
       </div>
-      {/* <div className="outer2">
+      <div className="outer2">
                 <div className="heading2">
                     <h2>Publish Your Route in Just Minutes</h2>
                 </div>
@@ -157,7 +154,7 @@ const Publish = () => {
                     </div>
                 </div>
                 <div className="feature2">
-                    <div className="logosmall5"></div>
+                    <div className="logosmall6"></div>
                     <div className="textsmall5">
                         <h4>Publish Your Route</h4>
                         Indicate departure and arrival points, the type of transport and check our
@@ -165,17 +162,17 @@ const Publish = () => {
                     </div>
                 </div>
                 <div className="feature3">
-                    <div className="logosmall5"></div>
+                    <div className="logosmall7"></div>
                     <div className="textsmall5">
                         <h4>Accept Booking Requests</h4>
                         Review client profiles and accept their requests to deliver their good with you.
                         That’s how easy it is.
                     </div>
                 </div>
-                <div className="box3">
+                {/* <div className="box3">
                     <button>Publish a Route</button>
-                </div>
-            </div> */}
+                </div> */}
+            </div>
     </div>
   );
 };

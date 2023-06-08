@@ -4,7 +4,7 @@ import logo from "../utils/logo-black.png";
 // import { NavLink } from "react-router-dom";
 // import Login from "./HomePage/Login";
 
-import {Routes, Route, useNavigate, NavLink} from 'react-router-dom';
+import {useNavigate, NavLink} from 'react-router-dom';
 
 // import logo here
 function Navbar() {

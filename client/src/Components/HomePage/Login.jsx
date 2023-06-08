@@ -26,8 +26,8 @@ export default function Login() {
   const login = async (e) => {
     e.preventDefault();
     const email = user.loginEmail;
-    const password = user.password;
-    const res = await fetch("http://localhost:5000/auth/login", {
+    const password = user.loginPassword;
+    const res = await fetch(`${process.env.REACT_APP_BASE_URL}/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -40,9 +40,10 @@ export default function Login() {
     });
     
     const data = await res.json();
-    console.log("zzz");
     if (res.status === 200) {
       alert(data.message);
+      console.log("login success");
+      navigate("/");
     } else alert(data.message);
   };
 
@@ -50,7 +51,7 @@ export default function Login() {
     e.preventDefault();
     const { name, email, password, confirmPassword } = user;
     console.log(user);
-    const res = await fetch("http://localhost:5000/auth/register", {
+    const res = await fetch(`${process.env.REACT_APP_BASE_URL}/auth/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -86,6 +87,7 @@ export default function Login() {
             value={user.loginPassword}
             onChange={handleChange}
             name="loginPassword"
+            placeholder="password"
           />
           <button onClick={login}>Login</button>
         </div>
@@ -97,7 +99,7 @@ export default function Login() {
             onChange={handleChange}
             name="name"
             type="text"
-            placeholder="Ent your name"
+            placeholder="Enter your name"
           />
           <input
             type="email"

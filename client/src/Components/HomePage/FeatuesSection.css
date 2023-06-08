@@ -19,6 +19,33 @@
     /* Give Height and Width for Image */
     margin-bottom: 20px;
   }
+
+  .section__icon1 {
+    /* font-size: 3em; */
+    height: 30%;
+    width: 30%;
+    background: url("./images/truck-pickup-solid.svg") center no-repeat;
+    /* Give Height and Width for Image */
+    /* margin-bottom: 20px; */
+  }
+
+  .section__icon2 {
+    /* font-size: 3em; */
+    height: 30%;
+    width: 30%;
+    background: url("./images/users-viewfinder-solid.svg") center no-repeat;
+    /* Give Height and Width for Image */
+    /* margin-bottom: 20px; */
+  }
+
+  .section__icon3 {
+    /* font-size: 3em; */
+    height: 30%;
+    width: 30%;
+    background: url("./images/car-rear-solid.svg") center no-repeat;
+    /* Give Height and Width for Image */
+    /* margin-bottom: 20px; */
+  }
   
   .section__heading {
     font-size: 1.1rem;

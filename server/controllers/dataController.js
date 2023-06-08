@@ -65,7 +65,7 @@ exports.getSolutions = async (req, res) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/getDistance", ///Alert
+        "/api/getDistance", ///Alert
         data
       );
       console.log(response.data.result);
@@ -116,7 +116,7 @@ exports.addRoute = async (req, res) => {
   )
     return res.status(422).json({ message: "wrong data" });
   try {
-    const order = new Order({ name, source, destination });
+    const order = new Order({ name, source, destination,status:"pending", location:"NULL" });
     if (order.save())
       res.status(201).json({ message: "order registered successfully" });
   } catch (error) {

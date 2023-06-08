@@ -8,7 +8,7 @@ const Footer2 = () => {
         <h1>Going somewhere?</h1>
         <p>Let's give you an opportunity to contribute now.</p>
         <div className="btn__wrapper">
-          <button>Offer a route</button>
+          {/* <button>Offer a route</button> */}
         </div>
       </div>
       <div className="section__item">

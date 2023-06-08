@@ -8,12 +8,6 @@ export default function Result() {
   return (
     <>
       <div id="main">
-        <div>
-          <span>Name</span>
-          <span>Pickup</span>
-          <span>Drop</span>
-          <button id="btn1">Submit</button>
-        </div>
         {arr.map((e,i) => {
           return <ResultTemplate data={e} key={i}/>;
         })}
